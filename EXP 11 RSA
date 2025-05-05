@@ -1,3 +1,4 @@
+SOME NOTES GIVEN BELOW
 1. sudo apt update && sudo apt upgrade -y  
 2. sudo apt install python3 python3-pip -y  
 3. pip3 install cryptography pandas faker  
@@ -71,3 +72,8 @@ decrypted = private_key.decrypt
 print(f"Decrypted Data: {decrypted.decode()}")
 
 11. python3 rsa_decrypt.py 
+
+NOTES 
+• When you are saving txt or py files after putting text/codes, to save first do Ctrl+O 
+then press Enter and then Ctrl+X to exit 
+• If you want to make changes to the txt or py file, simply run “nano filename” again
