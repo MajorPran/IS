@@ -1,0 +1,39 @@
+sudo apt update && sudo apt upgrade -y  
+2. sudo apt install python3 python3-pip -y  
+3. pip3 install cryptography pandas faker  
+4. python3 --version  
+5. pip3 list | grep -E "cryptography|pandas|faker" 
+6. nano aes_key.py
+to copy and paste code: copy press ctrl+c, to paste use ctrl+shift+v 
+from cryptography.fernet import Fernet 
+key = Fernet.generate_key() 
+with open("aes_key.key", "wb") as key_file: 
+  key_file.write(key)  
+  print(f"Generated AES Key: {key.decode()}")
+
+7. python3 aes_key.py
+8. nano aes_encrypt.py 
+from cryptography.fernet import Fernet  
+# Load AES key  
+key = open("aes_key.key", "rb").read()  
+cipher = Fernet(key)  
+# Message to encrypt  
+message = "Confidential Data: Do not share!" 
+# Encrypt the message  
+encrypted_message = cipher.encrypt(message.encode())  
+print(f"Encrypted Message: {encrypted_message.decode()}")
+
+9. python3 aes_encrypt.py 
+10. nano aes_decrypt.py
+from cryptography.fernet import Fernet  
+# Load AES key  
+key = open("aes_key.key", "rb").read()  
+cipher = Fernet(key)  
+# Encrypted message (replace with actual encrypted message, the output from 
+aes_encrypt.py)  
+encrypted_message = b'ENCRYPTED_MESSAGE_HERE' 
+# Decrypt the message  
+decrypted_message = cipher.decrypt(encrypted_message).decode()  
+print(f"Decrypted Message: {decrypted_message}")
+
+11. python3 aes_decrypt.py
