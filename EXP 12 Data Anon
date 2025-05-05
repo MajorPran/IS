@@ -13,15 +13,16 @@ df = pd.DataFrame(data)
 df["Masked_SSN"] = df["SSN"].str.replace(r"\d{3}-\d{2}", "***-**-", regex=True)  
 # Display the masked 
 print(df)
+8. python3 mask.py
 
-8. nano fake_data.py
+9. nano fake_data.py
 from faker import Faker  
 # Create a Faker instance  
 fake = Faker()  
 # Generate and print 5 fake records  
 for _ in range(5):  
   print(fake.name(), "-", fake.email(), "-", fake.phone_number())
-
+10. python3 fake_data.py
 NOTES 
 • When you are saving txt or py files after putting text/codes, to save first do Ctrl+O 
 then press Enter and then Ctrl+X to exit 
